@@ -30,7 +30,7 @@ for point in points[:int(3 * (n/2))]:
 coordinates = np.block(coordinates)
 
 #plotting the simulated points
-scatter = plt.scatter(coordinates[0,:], coordinates[1,:], label="Simulated plot", color="red")
+scatter = plt.scatter(coordinates[0,:], coordinates[1,:], label="Sim", color="red")
 
 #freeing the used memory
 dll.freeMemory(points, n)
@@ -43,7 +43,7 @@ function = 3*x - 6*y + (9/7)*(np.log(np.abs((28*x + 42*y + 44)/44)))
 contour = plt.contour(x, y, function, [0], colors = 'black', linewidths = 2)
 
 #creating a proxy line to be able to label the contour graph
-proxy_line = plt.Line2D([0], [0], color='black', linestyle='-', label='Theoretical plot')
+proxy_line = plt.Line2D([0], [0], color='black', linestyle='-', label='Theory')
 
 plt.xlabel("x")
 plt.ylabel("y")
