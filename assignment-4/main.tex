@@ -51,6 +51,23 @@
 Find the area enclosed by the parabola $4y = 3x^2$ and the line $2y = 3x + 12$.
 
 \solution\\
+
+The equation of parabola is $g \brak{\vec{x}} = \vec{x}^{\top}\vec{V}\vec{x} + 2 \vec{u}^{\top}\vec{x} + f = 0$. In matrix form, it is given by,
+\begin{align}
+	\myvec{x & y} \myvec{1 & 0 \\ 0 & 0} \myvec{x \\ y} + 2 \myvec{0 & -\frac{2}{3}} \myvec{x \\ y} + 0 = 0
+\end{align}
+Line equation is,
+\begin{align}
+	\vec{x} = \kappa \myvec{2 \\ 3} + \myvec{0 \\ 6}
+\end{align}
+Intersection of a line and a conic is given by,
+\begin{align}
+	\kappa_i = \frac{-\vec{m}^{\top}\brak{\vec{Vh}+\vec{u}}\pm\sqrt{\sbrak{\vec{m}^{\top}\brak{\vec{Vh}+\vec{u}}}^2-g\brak{h}\brak{\vec{m}^{\top}\vec{Vm}}}}{\vec{m}^{\top}\vec{Vm}}
+\end{align}
+For the given conic, $\vec{V}=\myvec{1 & 0 \\ 0 & 0 }, \vec{u} = \myvec{0 \\ -\frac{2}{3}}, f = 0$. For the given line, $\vec{h}=\myvec{0 \\ 6}$, $\vec{m}=\myvec{2 \\ 3}$
+\begin{align}	
+	\implies \kappa_i = \myvec{-2 \\ 3}, \myvec{4 \\ 12}
+\end{align}
 The 2 curves meet at the points \myvec{-2\\3} and \myvec{4\\12}. So, the area between the curves is given by,
 \begin{align}
 	\int{\brak{\frac{3}{2}x + 6} - {\brak{\frac{3}{4}x^2}}}
