@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import ctypes
 import math
+import cvxpy as cp
 
 #linking the .so file to this python file
 dll = ctypes.CDLL('./ccode.so')
@@ -38,11 +39,28 @@ for point in points[:n]:
 
 coordinates = np.block(coordinates)
 
+#Solving using geometric programming
+
+#Define the variables
+x1 = cp.Variable(pos=True)
+
+#Defining the objective function
+objective = cp.Minimize((0.25 * (math.pi**2 + (4 * math.pi)) * (x1**2)) - (0.25 * math.pi * k * x1) + ((k**2) * 0.0625))
+
+#Defining the problem
+problem = cp.Problem(objective)
+
+#Solving the problem
+problem.solve(gp=True)
+
 #plotting the simulated points
 plt.plot(coordinates[0,:], coordinates[1,:], label="Objective function", color="red")
 
 #plotting the local minima point
 plt.scatter(locMinima, (0.25 * (math.pi**2 + (4 * math.pi)) * (locMinima**2)) - (0.25 * math.pi * k * locMinima) + ((k**2) * 0.0625), label = "point of minima", linewidths = 2)
+
+#pllotting the local minima point obtained through geometric programming
+plt.scatter(x1.value , problem.value, color = 'black', label='Geometric Programming', linewidths = 1)
 
 #freeing the used memory
 dll.freeMemory(points, n)
