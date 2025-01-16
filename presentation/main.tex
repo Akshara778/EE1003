@@ -133,7 +133,12 @@ and prove that at the minimum sum of areas point, $a = 2r$.\\
 			From this equation, the ROC is,
 \begin{align}
 	\abs{z} &> max\brak{\abs{1 - 2\mu\brak{\brak{\frac{\pi^2}{4} + \pi}}},1}\\
-	\implies \abs{z} &> 1	
+	\implies \abs{z} &>
+	\begin{cases}
+		1 &, \mu < \frac{1}{\brak{\frac{\pi^2}{4} + \pi}}\\
+		\abs{1 - 2\mu\brak{\brak{\frac{\pi^2}{4} + \pi}}} &, \mu \geq \frac{1}{\brak{\frac{\pi^2}{4} + \pi}}\\
+	\end{cases}\\
+	\mu &\in \mathbb{R}
 \end{align}
 		\end{frame}
 		\begin{frame}
