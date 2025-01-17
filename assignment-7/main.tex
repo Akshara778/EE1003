@@ -70,13 +70,13 @@ Using the quadratic formula,
 
 \textbf{Simulated Solution:}\\
 
-By Newton-Ralphson method,\\
+\textbf{By Newton-Ralphson method,}\\
 Take initial guess $s_0$, then run the following loop,
 \begin{align}
 	s_{n+1} &= s_n - \frac{f\brak{s_n}}{f^\prime\brak{s_n}}\\
 	f\brak{s} &= s^2 + 5s - 1800\\
 	f^\prime\brak{s} &= 2s + 5\\
-	s_{n+1} &= s_n - \frac{s^2 + 5s - 1800}{2s + 5}
+	s_{n+1} &= s_n - \frac{s_n^2 + 5s_n - 1800}{2s_n + 5}
 \end{align}
 This method converges for real roots but when roots are complex, it can go to infinity as well. To avoid that, if our roots are complex, take initial guess as a complex number.
 The values of $s$ got through this method are,
