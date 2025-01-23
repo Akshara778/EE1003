@@ -171,6 +171,7 @@ For example:
 \end{frame}
 \begin{frame}
 	\frametitle{Simulated Solution - 2}
+	Steps to apply Householder transformation:\\
 	1. Select a Subvector $\vec{x}$:
 \begin{align}
 	x = \begin{bmatrix}
@@ -224,12 +225,24 @@ For example:
 \end{frame}
 \begin{frame}
 	\frametitle{Simulated Solution - 2}
-	Each Givens rotation zeros out a specific subdiagonal element, progressively transforming the Hessenberg matrix into an upper triangular matrix.
-
+	Givens rotations:\\
+	A Givens rotation matrix $(G(i,j,\theta)$ zeroes out the element $a_{ij}$. It is defined as:
+        {\small
+        \begin{align*}
+          G(i, j, \theta) = \begin{bmatrix}
+            1 & \cdots & 0 & \cdots & 0 & \cdots & 0 \\
+            \vdots & \ddots & \vdots & \ddots & \vdots & \ddots & \vdots \\
+            0 & \cdots & c & \cdots & s & \cdots & 0 \\
+            \vdots & \ddots & \vdots & \ddots & \vdots & \ddots & \vdots \\
+            0 & \cdots & -\overline{s} & \cdots & \overline{c} & \cdots & 0 \\
+            \vdots & \ddots & \vdots & \ddots & \vdots & \ddots & \vdots \\
+            0 & \cdots & 0 & \cdots & 0 & \cdots & 1
+          \end{bmatrix}
+        \end{align*}
+        }
 	\begin{align}
 		c = \frac{\overline{a_{i}}}{\sqrt{a_{i}^2 + a_{j}^2}}, \quad s = \frac{-\overline{a_{j}}}{\sqrt{a_{i}^2 + a_{j}^2}}
 	\end{align}
-	Givens rotation essentially rotates the two rows that $a_i$ and $a_j$ are on such that $a_j = 0$ after rotation, other rows remain unaffected.\\ 
 \end{frame}
 \begin{frame}
 	\frametitle{Simulated Solution - 2}
