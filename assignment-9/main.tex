@@ -49,11 +49,11 @@
 {\let\newpage\relax\maketitle}
 \textbf{Question:\\}
 \begin{align}
-	P\brak{A} &= 0.54\\
-	P\brak{B} &= 0.69\\
-	P\brak{A \cap B} &= 0.35
+	\Pr\brak{A} &= 0.54\\
+	\Pr\brak{B} &= 0.69\\
+	\Pr\brak{A \cap B} &= 0.35
 \end{align}
-Find $P\brak{A \cup B}$\\
+Find $\Pr\brak{A \cup B}$\\
 
 \solution\\
 
@@ -65,35 +65,35 @@ For 2 Boolean variables $A$ and $B$, the axioms of Boolean Algebra are defined a
 	AB &= BA\\
 	A + B &= B + A\\
 	AA^\prime &= 0\\
-	P\brak{1} &= 1\\
-	P\brak{A + B} &= P\brak{A} + P\brak{B}, \text{ if } P\brak{AB} = 0
+	\Pr\brak{1} &= 1\\
+	\Pr\brak{A + B} &= \Pr\brak{A} + \Pr\brak{B}, \text{ if } \Pr\brak{AB} = 0
 \end{align}
 Using these axioms, we will try to prove that
 \begin{align}
-	P\brak{A + B} = P\brak{A} + P\brak{B} - P\brak{AB}
+	\Pr\brak{A + B} = \Pr\brak{A} + \Pr\brak{B} - \Pr\brak{AB}
 \end{align}
 We will start by representing $A$ and $B$ as:
 \begin{align}
 	A &= AB + AB^\prime\\
 	B &= AB + A^\prime B\\
-	P\brak{A} &= P\brak{AB} + P\brak{AB^\prime}\\
-	P\brak{B} &= P\brak{AB} + P\brak{A^\prime B}
+	\Pr\brak{A} &= \Pr\brak{AB} + \Pr\brak{AB^\prime}\\
+	\Pr\brak{B} &= \Pr\brak{AB} + \Pr\brak{A^\prime B}
 \end{align}
 On adding $\brak{12}$ and $\brak{13}$,
 \begin{align}
 	A + B &= AB + AB + AB^\prime + A^\prime B\\
 	A + B &= AB + AB^\prime + A^\prime B\\
-	P\brak{A + B} &= P\brak{AB + AB^\prime + A^\prime B}\\
-	P\brak{A + B} &= P\brak{AB} + P\brak{AB^\prime} + P\brak{A^\prime B}\\
-	P\brak{A + B} &= P\brak{AB} + P\brak{A} - P\brak{AB} + P\brak{B} - P\brak{AB}\\
-	\implies P\brak{A + B} &= P\brak{A} + P\brak{B} - P\brak{AB}
+	\Pr\brak{A + B} &= \Pr\brak{AB + AB^\prime + A^\prime B}\\
+	\Pr\brak{A + B} &= \Pr\brak{AB} + \Pr\brak{AB^\prime} + \Pr\brak{A^\prime B}\\
+	\Pr\brak{A + B} &= \Pr\brak{AB} + \Pr\brak{A} - \Pr\brak{AB} + \Pr\brak{B} - \Pr\brak{AB}\\
+	\implies \Pr\brak{A + B} &= \Pr\brak{A} + \Pr\brak{B} - \Pr\brak{AB}
 \end{align}
-Using the given values of $P\brak{A}, P\brak{B}$ and $P\brak{AB}$,
+Using the given values of $\Pr\brak{A}, \Pr\brak{B}$ and $\Pr\brak{AB}$,
 \begin{align}
-	P\brak{A + B} &= 0.54 + 0.69 - 0.35\\
-	P\brak{A + B} &= 0.88
+	\Pr\brak{A + B} &= 0.54 + 0.69 - 0.35\\
+	\Pr\brak{A + B} &= 0.88
 \end{align}
-Therefore, the value of $P\brak{A + B}$ is $0.88$.\\\\
+Therefore, the value of $\Pr\brak{A + B}$ is $0.88$.\\\\
 \textbf{Simulated Solution:\\}
 Let $X_1$ be an indicator random variable of the event $A$.\\
 $X_1$ is defined as:
@@ -174,26 +174,26 @@ From $\brak{34}$,
 \end{align}
 Through our definition, we know that,
 \begin{align}
-	P\brak{A} = p_1\\
-	P\brak{B} = p_2\\
-	P\brak{AB} = p_3
+	\Pr\brak{A} = p_1\\
+	\Pr\brak{B} = p_2\\
+	\Pr\brak{AB} = p_3
 \end{align}
 Therefore, by comparison of the axiom
 \begin{align}
-	P\brak{A + B} = P\brak{A} + P\brak{B} - P\brak{AB}
+	\Pr\brak{A + B} = \Pr\brak{A} + \Pr\brak{B} - \Pr\brak{AB}
 \end{align}
 and the equation $\brak{39}$,
 \begin{align}
-	p &= P\brak{A + B}\\
-	P\brak{A + B} &= 0.54 + 0.69 - 0.35\\
-	\implies P\brak{A + B} &= 0.88
+	p &= \Pr\brak{A + B}\\
+	\Pr\brak{A + B} &= 0.54 + 0.69 - 0.35\\
+	\implies \Pr\brak{A + B} &= 0.88
 \end{align}
 
 \pagebreak
 Below is the plot for the simulation of the probabilities, where the grey stems represent the theretical probabilities and the coloured stems represent the simulated ones.\\
 Through observation in the last stem, we have proved through the code that
 \begin{align}
-	P\brak{A + B} = P\brak{A} + P\brak{B} - P\brak{AB}
+	\Pr\brak{A + B} = \Pr\brak{A} + \Pr\brak{B} - \Pr\brak{AB}
 \end{align}
 
 \begin{figure}[h!]
